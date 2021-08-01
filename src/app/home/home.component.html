@@ -1,7 +1,7 @@
 <h1>Recent Posts</h1>
 
 <div
-  *ngFor="let article of articles"
+  *ngFor="let article of articles; let i = index"
   class="article"
   [ngStyle]="{ background: 'url(' + article.image + ')' }"
 >
@@ -14,4 +14,5 @@
   </span>
   <br />
   <span *ngFor="let tag of article.tags">{{ tag }}</span>
+  <span><a routerLink="/article/{{ i }}">Read full article</a></span>
 </div>

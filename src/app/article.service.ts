@@ -12,4 +12,8 @@ export class ArticleService {
   getArticles(): Observable<Article[]> {
     return this.http.get<Article[]>('http://localhost:4000');
   }
+
+  getArticle(id: string) {
+    return this.http.get<Article>('http://localhost:4000/' + id);
+  }
 }

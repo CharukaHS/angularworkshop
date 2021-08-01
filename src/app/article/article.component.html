@@ -1,1 +1,20 @@
-<p>article works!</p>
+<div *ngIf="article">
+  <h1>{{ article.title }}</h1>
+  <br />
+
+  <div
+    class="image-container"
+    [ngStyle]="{ background: 'url(' + article.image + ')' }"
+  ></div>
+  <span>by {{ article.author }}</span>
+  <br />
+
+  <span>{{ article.type }}</span>
+  <br />
+
+  <span *ngFor="let tag of article.tags">{{ tag }}</span>
+
+  <div>
+    {{ article.content }}
+  </div>
+</div>
