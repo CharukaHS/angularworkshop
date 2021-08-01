@@ -1,0 +1,17 @@
+<h1>Recent Posts</h1>
+
+<div
+  *ngFor="let article of articles"
+  class="article"
+  [ngStyle]="{ background: 'url(' + article.image + ')' }"
+>
+  <span>
+    {{ article.title }}
+  </span>
+  <br />
+  <span>
+    {{ article.author }}
+  </span>
+  <br />
+  <span *ngFor="let tag of article.tags">{{ tag }}</span>
+</div>
